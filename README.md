@@ -1,2 +1,2 @@
 # tal
-Realtime chat written in NodeJS
+Realtime chat app written in NodeJS

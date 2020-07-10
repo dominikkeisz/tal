@@ -1,0 +1,22 @@
+{
+  "name": "tal",
+  "version": "1.0.0",
+  "description": "Realtime chat app written in NodeJS",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominikkeisz/tal.git"
+  },
+  "author": "dominikkeisz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dominikkeisz/tal/issues"
+  },
+  "homepage": "https://github.com/dominikkeisz/tal#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
