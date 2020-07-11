@@ -5,7 +5,9 @@
   "main": "src/app.js",
   "scripts": {
     "start": "nodemon --inspect=0.0.0.0 src/app.js",
-    "start:prod": "node src/app.js"
+    "start:prod": "node src/app.js",
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "jest": "^26.1.0",
     "nodemon": "^2.0.4"
   }
 }
