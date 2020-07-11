@@ -3,6 +3,7 @@ version: '3'
 services:
   node:
     build: .
+    restart: always
     env_file: .env
     volumes:
       - .:/usr/app
@@ -10,3 +11,13 @@ services:
     ports:
       - ${PORT}:${PORT}
     command: npm run start
+    links:
+      - mongo
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27018:27017"
