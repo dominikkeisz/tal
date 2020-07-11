@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 4545;
+const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('Hello Nodemon!')
 });
 
 app.listen(port, () => {
-    console.log('App is listening on localhost:' + port)
+    console.log(`App is listening on http://localhost:${port}`)
 });
