@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v2
-        - name: Use Node.js
+        - name: Build -> Lint -> Test
           uses: actions/setup-node@v1
           with:
             node-version: '12.x'
@@ -21,18 +21,7 @@ jobs:
               ${{ runner.OS }}-
         - name: Install dependencies
           run: npm ci
-  lint:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-        - run: npm run lint
-          env:
-            CI: true
-  test:
-    needs: [lint]
-    runs-on: ubuntu-latest
-
-    steps:
-        - run: npm run test
+          run: npm run lint
+          run: npm run test
           env:
             CI: true
