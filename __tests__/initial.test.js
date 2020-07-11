@@ -1,5 +1,5 @@
 describe('Initial Test Suite', () => {
-    it('My Test Case', () => {
-        expect(true).toBe(true);
-    });
+  it('My Test Case', () => {
+    expect(true).toBe(true);
+  });
 });

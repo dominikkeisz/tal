@@ -1,3 +1,7 @@
 {
-    "extends": "strongloop"
+    "env": {
+        "jest": true
+    },
+    "extends": "strongloop",
+    "parser": "babel-eslint"
 }
