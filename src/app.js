@@ -1,20 +1,21 @@
 const express = require('express');
+const dotenv = require('dotenv').config('../.env');
 const app = express();
 const port = process.env.PORT || 8080;
-const dbConnection = String(process.env.DB_CONNECTION);
 const mongoose = require('mongoose');
+
 // Import routes
 const authRouter = require('./backend/api-routes/auth');
-console.log(dbConnection);
+
 // Connect to db
 mongoose.connect(
-  dbConnection,
+  process.env.DB_CONNECTION,
   { useNewUrlParser: true },
   (err) => {
     if (err) {
-      console.error('Error occured while connection to DB!');
+      console.error(err);
     } else {
-      console.log('Datbase connection established successfully');
+      console.log('Database connection established successfully');
     }
   }
 );
