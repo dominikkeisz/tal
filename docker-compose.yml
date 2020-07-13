@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
   node:
@@ -6,23 +6,32 @@ services:
     restart: always
     volumes:
       - .:/usr/app
-      - /usr/app/node_modules
+      - ./node_modules:/usr/app/node_modules
     ports:
-      - 4545:4545
+      - '$PORT:$PORT'
     command: npm run start
-    links:
-      - mongo
     depends_on:
-      - mongo
+      - database
+    networks:
+      - talnet
 
-  mongo:
-    container_name: mongo
+  database:
     image: mongo
     environment:
-      - MONGO_INITDB_DATABASE=Tal
-      - MONGO_INITDB_ROOT_USERNAME=tal-admin
-      - MONGO_INITDB_ROOT_PASSWORD=secret
+        - MONGO_INITDB_DATABASE=tal
+        - MONGO_INITDB_ROOT_USERNAME=tal-root
+        - MONGO_INITDB_ROOT_PASSWORD=secret
     volumes:
-      - ./src/backend/storage/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+        - ./src/backend/storage/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+        - mongodata:/data/db
     ports:
-      - "27017-27019:27017-27019"
+        - '27017-27019:27017-27019'
+    networks:
+      - talnet
+
+volumes:
+  mongodata:
+    
+networks:
+  talnet:
+    driver: bridge
