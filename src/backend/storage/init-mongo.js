@@ -1,12 +1,13 @@
-const dotenv = require('dotenv').config('../.env');
-
-db.createUser({
-    user: String(process.env.DB_USER),
-    pwd: String(process.env.DB_USER_PASSWORD),
+// eslint-disable-next-line
+db.createUser(
+  {
+    user: 'tal-user',
+    pwd: 'pass',
     roles: [
-        {
-            role: "readWrite",
-            db: String(process.env.DB_NAME),
-        }
-    ]
-})
+      {
+        role: 'readWrite',
+        db: 'tal',
+      },
+    ],
+  }
+);

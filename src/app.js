@@ -1,15 +1,17 @@
 const express = require('express');
-const dotenv = require('dotenv').config('../.env');
+const dotenv = require('dotenv');
+dotenv.config('../.env');
 const app = express();
 const port = process.env.PORT || 8080;
 const mongoose = require('mongoose');
+const dbLink = 'mongodb://tal-user:pass@database:27017/tal';
 
 // Import routes
 const authRouter = require('./backend/api-routes/auth');
 
 // Connect to db
 mongoose.connect(
-  process.env.DB_CONNECTION,
+  dbLink,
   { useNewUrlParser: true },
   (err) => {
     if (err) {
