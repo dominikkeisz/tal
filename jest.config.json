@@ -1,3 +1,4 @@
 {
-    "testRegex": "/__tests__/.*\\.(spec|test)\\.[tj]sx?$"
+    "testRegex": "/__tests__/.*\\.(spec|test)\\.[tj]sx?$",
+    "testEnvironment": "node"
 }
