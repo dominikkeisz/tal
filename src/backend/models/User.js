@@ -28,6 +28,6 @@ const userSchema = new mongoose.Schema({
   },
 }, {timestamps: true});
 
-userSchema.plugin(uniqueValidator, { message: " is already taken."});
+userSchema.plugin(uniqueValidator, { message: ' is already taken.'});
 
 module.exports = mongoose.model('User', userSchema);
