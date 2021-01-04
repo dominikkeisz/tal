@@ -3,10 +3,9 @@ version: '3'
 services:
   node:
     build: .
-    env_file: .env
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
     ports:
-      - ${PORT}:${PORT}
+      - "8080:8080"
     command: npm run start
