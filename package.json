@@ -2,7 +2,7 @@
   "name": "tal",
   "version": "1.0.0",
   "description": "Realtime chat application using Socket.io, Node.js and React.js",
-  "main": "index.js",
+  "main": "src/server/index.js",
   "scripts": {
     "test": "test"
   },
