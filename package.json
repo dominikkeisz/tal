@@ -1,34 +1,19 @@
 {
   "name": "tal",
   "version": "1.0.0",
-  "description": "Realtime chat app written in NodeJS",
-  "main": "src/app.js",
+  "description": "Realtime chat application using Socket.io, Node.js and React.js",
+  "main": "src/server/index.js",
   "scripts": {
-    "start": "nodemon --inspect=0.0.0.0 src/app.js",
-    "start:prod": "node src/app.js",
-    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore .",
-    "lint:fix": "./node_modules/.bin/eslint --fix --ignore-path .gitignore .",
-    "test": "./node_modules/.bin/jest --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch"
+    "test": "test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dominikkeisz/tal.git"
   },
-  "author": "dominikkeisz",
+  "author": "Dominik Keisz",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dominikkeisz/tal/issues"
   },
-  "homepage": "https://github.com/dominikkeisz/tal#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.4.0",
-    "eslint-config-strongloop": "^2.1.0",
-    "jest": "^26.1.0",
-    "nodemon": "^2.0.4"
-  }
+  "homepage": "https://github.com/dominikkeisz/tal#readme"
 }
